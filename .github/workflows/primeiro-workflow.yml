@@ -1,0 +1,26 @@
+name: Primeiro Workflow de CI/CD
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  explorar_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Código
+        [cite_start]uses: actions/checkout@v4 
+
+      - name: Configurar Node.js 18
+        [cite_start]uses: actions/setup-node@v3 
+        with:
+          node-version: '18'
+
+      - name: Instalar Dependências 
+        run: echo "Simulando a instalação de dependências..." 
+
+      - name: Listar Arquivos do Projeto
+        [cite_start]run: ls -la 
+
+      - name: Imprimir Mensagem de Sucesso
+        run: echo "Prestou sim!"
